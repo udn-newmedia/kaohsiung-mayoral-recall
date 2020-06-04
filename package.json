@@ -1,0 +1,49 @@
+{
+  "name": "kaohsiung-mayoral-recall",
+  "version": "1.0.0",
+  "description": "The 2020 Kaohsiung mayoral recall vote map",
+  "main": "recall-han.js",
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "es6-promise": "^4.2.8",
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "compression-webpack-plugin": "^4.0.0",
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
+    "sass": "^1.26.7",
+    "sass-loader": "^8.0.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "url-loader": "^4.1.0",
+    "vue-loader": "^15.9.2",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udn-newmedia/kaohsiung-mayoral-recall.git"
+  },
+  "keywords": [
+    "Kaohsiung",
+    "Han Kuo-yu",
+    "recall"
+  ],
+  "author": "freddycro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udn-newmedia/kaohsiung-mayoral-recall/issues"
+  },
+  "homepage": "https://github.com/udn-newmedia/kaohsiung-mayoral-recall#readme"
+}
