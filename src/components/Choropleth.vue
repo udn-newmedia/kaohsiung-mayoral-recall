@@ -4,8 +4,8 @@
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
-      x="0px"
-      y="0px"
+      x="0"
+      y="0"
       :viewBox="viewBox"
       style="enable-background:new 0 0 1280 720;"
       xml:space="preserve"
@@ -447,71 +447,71 @@
       <div v-show="currentYear === 2018" class="choropleth-legend">
         <div class="legend-row__text"><p>得票率(%)</p></div>
         <ul class="legend-row-container">
-          <ui class="legend-row">
+          <li class="legend-row">
             <div class="legend-row__rect blue-1"></div>
             <div class="legend-row__text"><p>90-100</p></div>
             <div class="legend-row__rect green-1"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect blue-2"></div>
             <div class="legend-row__text"><p>80-89</p></div>
             <div class="legend-row__rect green-2"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect blue-3"></div>
             <div class="legend-row__text"><p>70-79</p></div>
             <div class="legend-row__rect green-3"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect blue-4"></div>
             <div class="legend-row__text"><p>60-69</p></div>
             <div class="legend-row__rect green-4"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect blue-5"></div>
             <div class="legend-row__text"><p>50-59</p></div>
             <div class="legend-row__rect green-5"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect blue-6"></div>
             <div class="legend-row__text"><p>&lt;50</p></div>
             <div class="legend-row__rect green-6"></div>
-          </ui>
+          </li>
         </ul>
       </div>
       <div v-show="currentYear === 2020" class="choropleth-legend">
         <div class="legend-row__text"><p>同意票數<br>(千人)</p></div>
         <ul class="legend-row-container">
-          <ui class="legend-row">
+          <li class="legend-row">
             <div class="legend-row__rect recall-1"></div>
             <div class="legend-row__text"><p>&lt;70</p></div>
             <div class="legend-row__rect"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect recall-2"></div>
             <div class="legend-row__text"><p>50-70</p></div>
             <div class="legend-row__rect"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect recall-3"></div>
             <div class="legend-row__text"><p>30-50</p></div>
             <div class="legend-row__rect"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect recall-4"></div>
             <div class="legend-row__text"><p>10-30</p></div>
             <div class="legend-row__rect"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect recall-5"></div>
             <div class="legend-row__text"><p>5-10</p></div>
             <div class="legend-row__rect"></div>
-          </ui>
-          <ui class="legend-row">
+          </li>
+          <li class="legend-row">
             <div class="legend-row__rect recall-6"></div>
             <div class="legend-row__text"><p>&lt;5</p></div>
             <div class="legend-row__rect"></div>
-          </ui>
+          </li>
         </ul>
       </div>
     </div>
@@ -521,6 +521,12 @@
 <script>
 export default {
   name: 'choropleth',
+  props: {
+    defaultYear: {
+      default: '2018',
+      type: String,
+    },
+  },
   data() {
     return {
       currentYear: 2018,
@@ -570,8 +576,7 @@ export default {
             kmt: 56.58,	dpp: 42.13,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -581,8 +586,7 @@ export default {
             kmt: 61.99,	dpp: 36.81,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-3'
@@ -592,8 +596,7 @@ export default {
             kmt: 57.04,	dpp: 41.77,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -603,8 +606,7 @@ export default {
             kmt: 52.79,	dpp: 45.88,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -614,8 +616,7 @@ export default {
             kmt: 48.28,	dpp: 50.55,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
@@ -625,8 +626,7 @@ export default {
             kmt: 53.83,	dpp: 44.91,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -636,8 +636,7 @@ export default {
             kmt: 53.34,	dpp: 45.26,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -647,8 +646,7 @@ export default {
             kmt: 54.60,	dpp: 43.97,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -658,8 +656,7 @@ export default {
             kmt: 52.53,	dpp: 46.19,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -669,8 +666,7 @@ export default {
             kmt: 45.49,	dpp: 53.27,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
@@ -680,8 +676,7 @@ export default {
             kmt: 51.70,	dpp: 47.00,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -691,8 +686,7 @@ export default {
             kmt: 56.54,	dpp: 42.21,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -702,8 +696,7 @@ export default {
             kmt: 52.17,	dpp: 46.51,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -713,8 +706,7 @@ export default {
             kmt: 52.23,	dpp: 46.42,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -724,8 +716,7 @@ export default {
             kmt: 47.40,	dpp: 51.40,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
@@ -735,8 +726,7 @@ export default {
             kmt: 51.40,	dpp: 47.32,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -746,8 +736,7 @@ export default {
             kmt: 48.33,	dpp: 50.38,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
@@ -757,8 +746,7 @@ export default {
             kmt: 48.89,	dpp: 49.52,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-1'
@@ -768,8 +756,7 @@ export default {
             kmt: 54.93,	dpp: 43.78,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -779,8 +766,7 @@ export default {
             kmt: 52.43,	dpp: 45.66,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -790,8 +776,7 @@ export default {
             kmt: 44.45,	dpp: 54.11,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
@@ -801,8 +786,7 @@ export default {
             kmt: 46.81,	dpp: 51.87,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
@@ -812,8 +796,7 @@ export default {
             kmt: 52.77,	dpp: 45.86,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -823,8 +806,7 @@ export default {
             kmt: 49.62,	dpp: 48.89,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-1'
@@ -834,8 +816,7 @@ export default {
             kmt: 50.88,	dpp: 47.77,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -845,19 +826,17 @@ export default {
             kmt: 43.58,	dpp: 53.56,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
-        },kmt: 48.89,	dpp: 49.52,
+        },
         '阿蓮區': {
           2018: {
             kmt: 47.12,	dpp: 50.72,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
@@ -867,8 +846,7 @@ export default {
             kmt: 47.72,	dpp: 50.74,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'green-2'
@@ -878,8 +856,7 @@ export default {
             kmt: 49.67,	dpp: 48.42,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-1'
@@ -889,8 +866,7 @@ export default {
             kmt: 52.34,	dpp: 46.26,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -900,8 +876,7 @@ export default {
             kmt: 61.09,	dpp: 37.68,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-3'
@@ -911,8 +886,7 @@ export default {
             kmt: 53.81,	dpp: 44.57,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -922,8 +896,7 @@ export default {
             kmt: 56.45,	dpp: 42.05,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -933,8 +906,7 @@ export default {
             kmt: 60.17,	dpp: 38.15,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-3'
@@ -944,8 +916,7 @@ export default {
             kmt: 54.29,	dpp: 44.07,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-2'
@@ -955,8 +926,7 @@ export default {
             kmt: 91.83,	dpp: 7.67,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-6'
@@ -966,8 +936,7 @@ export default {
             kmt: 88.51,	dpp: 10.68,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-5'
@@ -977,8 +946,7 @@ export default {
             kmt: 85.08,	dpp: 14.33,
           },
           2020: {
-            kmt: null,
-            dpp: null,
+            poll: 0,
           },
           leader: 'b',
           class: 'blue-5'
@@ -993,22 +961,36 @@ export default {
       } else if (window.innerWidth >= 768) {
         return '256 0 768 720';
       } else {
-        return '320 0 640 720';
+        return '300 0 640 720';
       }
     },
   },
   methods: {
     fetchData() {
-      fetch('//newmedia.udn.com.tw/active/election2020/presidentPartyDept')
+      const url = 'https://udn.com/newmedia/cms_assets/recall_han/recall.json';
+      fetch(url)
         .then(res => {
           return res.json();
         })
         .then(res => {
           this.deptList.forEach(e => {
-            this.data[e][2020].kmt = res[2020]['高雄市'][e].president[1].percent;
-            this.data[e][2020].dpp = res[2020]['高雄市'][e].president[2].percent;
+            this.data[e][2020].poll = res[e];
           })
-        });
+        })
+        .then(() => {
+          this.currentYear = +this.defaultYear;
+          switch (this.currentYear) {
+            case 2018:
+              this.currentYear = 2020;
+              break;
+            case 2020:
+              this.currentYear = 2018;
+              break;
+            default:
+              break;
+          }
+          this.handleChangeData();
+        })
     },
     handleDataTransferClass(data, color) {
       if (data < 50) {
@@ -1025,16 +1007,42 @@ export default {
         return color + '-6';
       }
     },
+    handleRecallDataTransferClass(poll) {
+      if (poll > 70000) {
+        return 'recall-1';
+      } else if (poll >= 50000 && poll < 70000) {
+        return 'recall-2';
+      } else if (poll >= 30000 && poll < 50000) {
+        return 'recall-3';
+      } else if (poll >= 10000 && poll < 30000) {
+        return 'recall-4';
+      } else if (poll >= 5000 && poll < 10000) {
+        return 'recall-5';
+      } else {
+        return 'recall-6';
+      }
+    },
     handleChangeData() {
-      if (this.currentYear === 2018) this.currentYear = 2020;
-      else this.currentYear = 2018;
-
-      for (let i = 0; i < this.deptList.length; i++) {
-        const dept = this.deptList[i];
-        const data = Object.values(this.data[dept][this.currentYear]);
-        const paramData = data[0] > data[1] ? data[0] : data[1];
-        const paramColor = data[0] > data[1] ? 'blue' : 'green';
-        this.data[dept].class = this.handleDataTransferClass(paramData, paramColor);
+      switch (this.currentYear) {
+        case 2018:
+          this.currentYear = 2020;
+          for (let i = 0; i < this.deptList.length; i++) {
+            const dept = this.deptList[i];
+            this.data[dept].class = this.handleRecallDataTransferClass(this.data[dept][2020].poll);
+          }
+          break;
+        case 2020:
+          this.currentYear = 2018;
+          for (let i = 0; i < this.deptList.length; i++) {
+            const dept = this.deptList[i];
+            const data = Object.values(this.data[dept][this.currentYear]);
+            const paramData = data[0] > data[1] ? data[0] : data[1];
+            const paramColor = data[0] > data[1] ? 'blue' : 'green';
+            this.data[dept].class = this.handleDataTransferClass(paramData, paramColor);
+          }
+          break;
+        default:
+          break;
       }
     },
   },
@@ -1046,6 +1054,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/style/choropleth.scss";
+@import "@/style/mixins.scss";
+
 .choropleth-container {
   position: relative;
   .dept-boundary {
@@ -1087,8 +1097,20 @@ export default {
 
   .choropleth-legend-container {
     position: absolute;
-    right: 48px;
-    bottom: 16px;
+    right: 8px;
+    bottom: 24px;
+    @include smob {
+      bottom: 8px;
+    }
+    @include pad {
+      right: 15%;
+      bottom: 10%;
+    }
+    @include pc {
+      right: 22%;
+      bottom: 6%;
+    }
+
     .choropleth-legend {
       .legend-row-container {
         padding-inline-start: 0;
@@ -1100,18 +1122,32 @@ export default {
           margin-bottom: 1px;
           .legend-row__rect {
             width: 16px;
-            height: 25px;
+            height: 20px;
+            @include pad {
+              height: 25px;
+              font-size: 1rem;
+            }
+            @include pc {
+              height: 25px;
+              font-size: 1rem;
+            }
           }
           .legend-row__text {
-            min-width: 64px;
+            min-width: 56px;
           }
         }
       }
       p {
         margin: 0;
         padding: 0;
-        font-size: 1rem;
+        font-size: 0.875rem;
         text-align: center;
+        @include pad {
+          font-size: 1rem;
+        }
+        @include pc {
+          font-size: 1rem;
+        }
       }
     }
   }

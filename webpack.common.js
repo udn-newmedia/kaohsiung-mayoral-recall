@@ -11,7 +11,6 @@ module.exports = {
   output: {
     filename: "recall-han.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: "./",
   },
   module: {
     rules: [{

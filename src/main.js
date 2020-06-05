@@ -6,7 +6,7 @@ window.Promise = Promise;
 import Choropleth from './components/Choropleth.vue';
 
 new Vue({
-  el: '#app',
+  el: '#recall-han',
   components: {
     Choropleth
   },
