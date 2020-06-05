@@ -480,7 +480,7 @@
         </ul>
       </div>
       <div v-show="currentYear === 2020" class="choropleth-legend">
-        <div class="legend-row__text"><p>同意票數<br>(千人)</p></div>
+        <div class="legend-row__text"><p>同意票數(千人)</p></div>
         <ul class="legend-row-container">
           <li class="legend-row">
             <div class="legend-row__rect recall-1"></div>
@@ -1097,32 +1097,47 @@ export default {
 
   .choropleth-legend-container {
     position: absolute;
-    right: 8px;
-    bottom: 24px;
+    right: 12px;
+    bottom: 0;
     @include smob {
       bottom: 8px;
     }
     @include pad {
       right: 15%;
-      bottom: 10%;
+      bottom: 0;
     }
     @include pc {
-      right: 22%;
-      bottom: 6%;
+      right: 13%;
+      bottom: 0;
     }
 
     .choropleth-legend {
       .legend-row-container {
         padding-inline-start: 0;
-        margin-block-start: 0.5em;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        @include pad {
+          margin-block-start: 0.5em;
+          margin-block-end: auto;
+        }
+        @include pc {
+          margin-block-start: 0.5em;
+          margin-block-end: auto;
+        }
         .legend-row {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 1px;
+          margin-bottom: 0;
+          @include pad {
+            margin-bottom: 1px;
+          }
+          @include pc {
+            margin-bottom: 1px;
+          }
           .legend-row__rect {
-            width: 16px;
-            height: 20px;
+            width: 12px;
+            height: 18px;
             @include pad {
               height: 25px;
               font-size: 1rem;
@@ -1140,7 +1155,7 @@ export default {
       p {
         margin: 0;
         padding: 0;
-        font-size: 0.875rem;
+        font-size: 0.75rem;
         text-align: center;
         @include pad {
           font-size: 1rem;
