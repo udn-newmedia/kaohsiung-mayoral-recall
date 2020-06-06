@@ -484,7 +484,7 @@
         <ul class="legend-row-container">
           <li class="legend-row">
             <div class="legend-row__rect recall-1"></div>
-            <div class="legend-row__text"><p>&lt;70</p></div>
+            <div class="legend-row__text"><p>&gt;70</p></div>
             <div class="legend-row__rect"></div>
           </li>
           <li class="legend-row">
@@ -967,7 +967,8 @@ export default {
   },
   methods: {
     fetchData() {
-      const url = 'https://udn.com/newmedia/cms_assets/recall_han/recall.json';
+      // const url = './public/recall.json';
+      const url = 'https://udn.com/newmedia/cms_assets/recall_han/recall.json?0606';
       fetch(url)
         .then(res => {
           return res.json();
